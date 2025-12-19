@@ -1,0 +1,15 @@
+# Hacking an LLM's Thoughts in Real-Time
+On 24 May 2024 Anthropic released a research on interpretability and the activation of features within Claude. anthropic released a [major new research paper](https://www.anthropic.com/research/mapping-mind-language-model) on interpreting large language models, in which we began to map the inner working of their AI model, Claude 3 Sonnet. In the "mind" of Claude, theuy found millions of concepts thatactivate when the model reads relevant text or sees relevant images, which we call "features".
+
+One of those was the concept of Golden Gate Bridge. they found that there's a specific combination of neurons in Claude's neural network that activates when it encounters a mention(or a picture) of this most famous San Francisco landmark.
+
+Not only can they identify those features, they can turn the strength of their activation up or down, and identify corresponding changes in Claude's behaviour.
+
+And as they explain in their [research paper]([text](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html#:~:text=For%20instance%2C%20we%20see%20that%20clamping%20the%20Golden%20Gate%20Bridge%20feature%2034M/31164353%20to%2010%C3%97%20its%20maximum%20activation%20value%20induces%20thematically%2Drelated%20model%20behavior)), when they turn up the strength of the "Golden Gate Bridge" features, claude's response begin to focus on the Golden Gate Bridge. Its replies to most queries start to mention the Golden GAte Bridge, even if it's not directly relevant.
+
+If you ask this ""Golden Gate Claude" how to spend $10, it will recommend using it to derive across the Golden Gate Bridge an dpay the toll. If you ask it to write a love story, it'll tell you a tale of a car who can't wait to cross its beloved bridge on a foggy day. If you ask it what it imagines it looks like, it will likely tell you that it imagines it looks like the Golden Gate Bridge.
+For a short time, they make a cloude.ai available to everyone to interact, where you can talk to "Golden Gate Claude".
+
+The fact that we can find and alter these features within Claude makes us more confident that we're beginning to undersatand how large language models really work. This isn't a matter of asking the model verbally to do some paly-acting, or of adding a new "system prompt" that attaches extra text to every input, telling Claude to pretend it's bridge. Nor is it traditional "fine-tuning", where we use extra training data to create anew back box that tweaks the behaviour of the old black box. This is a precise, surgical change to some of the most basic aspects of the model's internal activations.
+
+As they [describe in their paper](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html), they can use these same techniques to change the strength of safety-related features—like those related to dangerous computer code, criminal activity, or deception. With further research, we believe this work could help make AI models safer.
